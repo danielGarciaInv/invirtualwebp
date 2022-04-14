@@ -32,7 +32,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/results/
 
 # NPM
-/node_modules
+/node_modules/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
