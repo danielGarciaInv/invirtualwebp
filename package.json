@@ -1,0 +1,22 @@
+{
+  "name": "invirtualwebp",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwind build -i prestilos/style.css -o assets/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielGarciaInv/invirtualwebp.git"
+  },
+  "author": "Daniel Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielGarciaInv/invirtualwebp/issues"
+  },
+  "homepage": "https://github.com/danielGarciaInv/invirtualwebp#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
