@@ -787,6 +787,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
+.text-blue-invirtual{
+  color: #3c64ad;
+}
+
 .hover\:bg-blue-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));

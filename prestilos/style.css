@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-blue-invirtual{
+    color: #3c64ad;
+}
