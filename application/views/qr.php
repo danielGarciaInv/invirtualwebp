@@ -20,7 +20,7 @@
             <div class="w-full my-2 md:m-0 md:w-8/12">
                 <h2 class="font-semibold mb-4">2. Descarga tu nuevo Código</h2>
                 <div class="bg-neutral-200 flex flex-col items-center p-4 rounded-lg w-full md:w-1/2" id="qrArea"></div>
-                <a class="bg-blue-500 hover:bg-blue-400 transition-colors text-neutral-100 font-semibold p-3 rounded-lg inline-block" hidden id="btnDescargar">Descargar</a>
+                <a class="bg-blue-500 hover:bg-blue-400 transition-colors text-neutral-100 font-semibold p-3 rounded-lg" hidden id="btnDescargar">Descargar</a>
             </div>
         </div>
     </div>
