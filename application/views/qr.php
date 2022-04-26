@@ -11,7 +11,7 @@
                     <label for="inputColor">Selecciona un Color (Opcional):</label>
                     <input type="color" id="inputColor" name="inputColor" class="w-16 h-10 my-2 cursor-pointer">
                     <label for="inputLogo">Selecciona un Logo (Opcional):</label>
-                    <p class="text-xs text-gray-600 mb-2">Recomendado: PNG radio 1:1</p>
+                    <p class="text-xs text-gray-600 mb-2">Recomendado: PNG, 1:1</p>
                     <input type="file" accept="image/*" id="inputLogo" name="inputLogo" class="my-2">
                     <button class="bg-blue-500 hover:bg-blue-400 transition-colors text-neutral-100 font-semibold p-3 rounded-lg mt-2" >Generar QR</button>
                 </form>
@@ -33,6 +33,7 @@
         const formGenerarQR = document.getElementById('formGenerarQR');
         const qrArea = document.getElementById("qrArea");
         const btnDescargar = document.getElementById("btnDescargar");
+        var qrcode;
 
         formGenerarQR.addEventListener('submit',(e)=>{
             e.preventDefault();
@@ -47,7 +48,7 @@
 
                     if(tipo == 'png' || tipo == 'jpeg'){
                         let src = URL.createObjectURL(inputLogo.files[0]);
-                        var qrcode = new QRCode(qrArea, {
+                        qrcode = new QRCode(qrArea, {
                             text: inputContenido.value,
                             logo: src,
                             logoWidth: undefined,
@@ -57,30 +58,23 @@
                             colorDark: inputColor.value,
                             colorLight: "#ffffff"
                         });
-
-                        let cnva = qrArea.children[0];
-                        let data = cnva.toDataURL('image/png');
-                        btnDescargar.setAttribute('href',data);
-                        btnDescargar.setAttribute('download', 'QR-InvirtualWeb.png');
                     }else{
                         alert('Porfavor sube solo archivos PNG o JPG');
                     }
                 }else{
-                    var qrcode = new QRCode(qrArea, {
+                    qrcode = new QRCode(qrArea, {
                         text: inputContenido.value,
                         colorDark: inputColor.value,
                         colorLight: "#ffffff"
                     });
-
-                    let cnva = document.getElementsByTagName('canvas')[0];
-                    let data = cnva.toDataURL('image/png');
-                    btnDescargar.setAttribute('href', data);
-                    btnDescargar.setAttribute('download', 'QR-InvirtualWeb.png');
                 }
             }
 
-            
-            btnDescargar.hidden = (!qrArea.innerHTML == '') ? false : true;
+            setTimeout(() => {
+                btnDescargar.href = qrcode._oDrawing.dataURL;
+                btnDescargar.download = 'QR-InvirtualWeb.png';
+                btnDescargar.hidden = (!qrArea.innerHTML == '') ? false : true;
+            }, 200);
             
         });
     });
