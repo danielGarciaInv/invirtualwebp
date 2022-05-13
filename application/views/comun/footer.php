@@ -4,6 +4,7 @@
     </div>
 </footer>
 
-<script src="<?= base_url('assets/js/easy.qrcode.js'); ?>"></script>
+<script src="<?= base_url('assets/js/tw-elements/dist/js/index.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/qr-code-styling/lib/qr-code-styling.js'); ?>"></script>
 </body>
 </html>
